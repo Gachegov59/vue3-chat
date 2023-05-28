@@ -1,30 +1,38 @@
-<template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+<template lang="pug">
+component(:is="$route.meta.layout || 'div'")
 </template>
 
-<style lang="scss">
+<script lang="ts">
+// import {defineComponent, ref} from 'vue'
+import { defineComponent } from 'vue';
+import axios from 'axios';
+
+export default defineComponent({
+	name: 'App',
+	components: {},
+	data() {
+		return {
+			posts: null
+		};
+	},
+	setup() {},
+	mounted() {
+		this.fetchData();
+	},
+	methods: {
+		async fetchData() {
+			try {
+				console.log(123);
+				this.posts = (await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=2')).data;
+			} catch (e) {
+				console.log(e);
+			}
+		}
+	}
+});
+</script>
+
+<style scoped lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
