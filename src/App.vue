@@ -5,7 +5,7 @@ component(:is="$route.meta.layout || 'div'")
 <script lang="ts">
 // import {defineComponent, ref} from 'vue'
 import { defineComponent } from 'vue';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default defineComponent({
 	name: 'App',
@@ -17,17 +17,10 @@ export default defineComponent({
 	},
 	setup() {},
 	mounted() {
-		this.fetchData();
+		// this.fetchData();
 	},
 	methods: {
-		async fetchData() {
-			try {
-				console.log(123);
-				this.posts = (await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=2')).data;
-			} catch (e) {
-				console.log(e);
-			}
-		}
+		// async fetchData() {}
 	}
 });
 </script>

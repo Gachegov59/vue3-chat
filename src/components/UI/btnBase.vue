@@ -1,6 +1,6 @@
 <template lang="pug">
 button(
-    @click="{}"
+    @click="clickBtn"
     :class="btnColor.toLowerCase()"
     ) {{btnText}}
 </template>
@@ -30,7 +30,13 @@ export default defineComponent({
 			}
 		}
 	},
-	computed: {}
+	computed: {},
+	methods: {
+		clickBtn() {
+			console.log('clickBtn');
+			this.$emit('clickBtn');
+		}
+	}
 	// setup(props) {
 	//   // const { text: btnText } = ref(props);
 	//   const { text } = ref<IbtnBase>(props.text);
@@ -43,4 +49,20 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+button {
+	color: var(--white);
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	padding: 6px 20px;
+	cursor: pointer;
+	font-size: 32px;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+.blue {
+	background: var(--cool-blue);
+}
+</style>

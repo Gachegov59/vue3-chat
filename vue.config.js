@@ -7,6 +7,7 @@ module.exports = defineConfig({
 		devtool: 'source-map'
 		// plugins: [new stylelintPlugin({ files: ['**/*.(vue|scss)'] })]
 	},
+	// publicPath: '/',
 	css: {
 		loaderOptions: {
 			sass: {

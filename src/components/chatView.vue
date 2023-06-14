@@ -7,7 +7,8 @@
     btnBase(
         :btnText="'Отправить'"
         :btnColor="'Blue'"
-        ).chat__btn
+				@clickBtn="clickChatBtn"
+        ).chat-view__btn
 </template>
 
 <script lang="ts">
@@ -16,7 +17,12 @@ import BtnBase from './UI/btnBase.vue';
 // import { IBtnBase } from "../interfaces/IUser.ts";
 export default defineComponent({
 	name: 'chatView',
-	components: { BtnBase }
+	components: { BtnBase },
+	methods: {
+		clickChatBtn() {
+			console.log('clickChatBtn');
+		}
+	}
 });
 </script>
 
@@ -39,6 +45,10 @@ export default defineComponent({
 		padding: 10px;
 		height: 54px;
 		background: var(--dark);
+	}
+	&__btn {
+		//height: 28px;
+		height: 60px;
 	}
 }
 </style>

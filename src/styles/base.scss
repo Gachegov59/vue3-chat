@@ -5,8 +5,11 @@
 	color: var(--white);
 }
 
+
 html {
 	height: 100% !important;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 800;
 }
 .div {
 	::after {
@@ -24,6 +27,8 @@ body {
 	height: 100%;
 	background: var(--dark);
 }
+
+
 
 //main {
 //  height: 100%;
