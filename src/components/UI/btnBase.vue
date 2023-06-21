@@ -1,14 +1,15 @@
 <template lang="pug">
 button(
-    @click="clickBtn"
-    :class="btnColor.toLowerCase()"
-    ) {{btnText}}
+ @click="clickBtn"
+ :class="btnColor"
+) {{btnText}}
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 // import { IBtnBase } from "../../interfaces/IUser.ts";
-import { IBtnColors } from '@/interfaces/IUser';
+// import { IBtnColors } from '@/interfaces/IUser';
+import { IBtnColors } from '../../interfaces/IUser';
 
 export default defineComponent({
 	name: 'btn-base',
@@ -23,7 +24,8 @@ export default defineComponent({
 			type: String
 		},
 		btnColor: {
-			required: true,
+			required: false,
+			default: 'blue',
 			type: String,
 			validator(value: string) {
 				return Object.values(IBtnColors).includes(value as IBtnColors);
@@ -33,36 +35,48 @@ export default defineComponent({
 	computed: {},
 	methods: {
 		clickBtn() {
-			console.log('clickBtn');
 			this.$emit('clickBtn');
+			console.log('clickBtn');
 		}
+
+		// clickBtn: function () {
+		// 	this.$emit('clickBtn');
+		// 	console.log('clickBtn');
+		// }
 	}
 	// setup(props) {
-	//   // const { text: btnText } = ref(props);
-	//   const { text } = ref<IbtnBase>(props.text);
-	//   const clickBtn = () => {
-	//     console.log(text);
-	//     // console.log(context);
-	//   };
-	//   return { clickBtn, text };
-	// },
+	// 	// const { text: btnText } = ref(props);
+	// 	const { text } = ref<IbtnBase>(props.text);
+	// 	const clickBtn = () => {
+	// 		console.log(text);
+	// 		// console.log(context);
+	// 	};
+	// 	return { clickBtn, text };
+	// }
 });
 </script>
 
 <style scoped lang="scss">
 button {
-	color: var(--white);
+	color: $white;
 	border: none;
 	outline: none;
 	border-radius: 5px;
 	padding: 6px 20px;
 	cursor: pointer;
-	font-size: 32px;
+	font-size: 16px;
+
 	&:hover {
 		opacity: 0.8;
 	}
 }
+
 .blue {
-	background: var(--cool-blue);
+	background: $cool-blue;
+}
+
+.blueDark {
+	background: $dark-five;
+	color: $light-blue;
 }
 </style>

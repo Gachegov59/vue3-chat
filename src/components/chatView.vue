@@ -1,14 +1,15 @@
 <template lang="pug">
 .chat-view
-  .chat-view__top
-  .chat-view__content
-  .chat-view__input-pannel
-    input(placeholder="ввдите сообщение..").chat__input
-    btnBase(
-        :btnText="'Отправить'"
-        :btnColor="'Blue'"
-				@clickBtn="clickChatBtn"
-        ).chat-view__btn
+	.chat-view__top
+	.chat-view__content
+	.chat-view__input-pannel
+		.chat-view__input
+			input(placeholder="Ввдите сообщение..")
+		btnBase(
+			:btnText="'Отправить'"
+			:btnColor="'blueDark'"
+			@clickBtn="clickChatBtn"
+		).chat-view__btn
 </template>
 
 <script lang="ts">
@@ -32,23 +33,43 @@ export default defineComponent({
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
-	background: var(--dark-two);
+	background: $dark-two;
 	padding-left: 2px;
+
 	&__top {
 		height: 67px;
-		background: var(--dark);
+		background: $dark;
 	}
+
 	&__content {
 		flex-grow: 1;
 	}
+
 	&__input-pannel {
+		display: flex;
+		align-items: center;
 		padding: 10px;
 		height: 54px;
-		background: var(--dark);
+		background: $dark;
 	}
+
+	&__input {
+		flex-grow: 1;
+		input {
+			background: transparent;
+			border: none;
+			&::placeholder {
+				font-size: 14px;
+				color: $blue-grey;
+			}
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+
 	&__btn {
-		//height: 28px;
-		height: 60px;
+		height: 28px;
 	}
 }
 </style>

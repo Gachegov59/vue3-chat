@@ -2,7 +2,7 @@
 ::after,
 ::before {
 	box-sizing: border-box;
-	color: var(--white);
+	color: $white;
 }
 
 
@@ -25,7 +25,7 @@ html {
 }
 body {
 	height: 100%;
-	background: var(--dark);
+	background: $dark;
 }
 
 
@@ -36,5 +36,5 @@ body {
 //  flex-grow: 1;
 //  //display: flex;
 //  //overflow: hidden;
-//  background: var(--dark);
+//  background: $dark);
 //}
