@@ -7,7 +7,7 @@
 			input(placeholder="Ввдите сообщение..")
 		btnBase(
 			:btnText="'Отправить'"
-			:btnColor="'blueDark'"
+			:btnColor="'blue'"
 			@clickBtn="clickChatBtn"
 		).chat-view__btn
 </template>

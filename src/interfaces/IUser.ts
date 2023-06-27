@@ -8,13 +8,3 @@ export interface IUser {
 	photoId?: string;
 	account: string;
 }
-
-export interface IBtnBase {
-	text: string;
-}
-
-export enum IBtnColors {
-	// eslint-disable-next-line no-unused-vars
-	blue = 'blue',
-	blueDark = 'blueDark'
-}

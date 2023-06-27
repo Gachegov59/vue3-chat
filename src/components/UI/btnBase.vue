@@ -7,52 +7,39 @@ button(
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import { IBtnBase } from "../../interfaces/IUser.ts";
-// import { IBtnColors } from '@/interfaces/IUser';
-import { IBtnColors } from '../../interfaces/IUser';
+import { IBtnColors } from '@/interfaces/IBtn';
+interface IBtnProps {
+	btnText: String;
+	btnColor: String;
+}
 
 export default defineComponent({
 	name: 'btn-base',
-	components: {},
-	// data() {
-	// 	return {};
-	// },
 	props: {
 		btnText: {
 			required: true,
-			// type: PropType<IBtnBase>,
 			type: String
 		},
 		btnColor: {
 			required: false,
 			default: 'blue',
+			// type: String as PropType<IBtnColors>,
 			type: String,
 			validator(value: string) {
 				return Object.values(IBtnColors).includes(value as IBtnColors);
 			}
 		}
 	},
-	computed: {},
-	methods: {
-		clickBtn() {
-			this.$emit('clickBtn');
+	emits: {
+		clickBtn: () => true
+	},
+	setup(props: IBtnProps, { emit }) {
+		const clickBtn = () => {
+			emit('clickBtn');
 			console.log('clickBtn');
-		}
-
-		// clickBtn: function () {
-		// 	this.$emit('clickBtn');
-		// 	console.log('clickBtn');
-		// }
+		};
+		return { clickBtn };
 	}
-	// setup(props) {
-	// 	// const { text: btnText } = ref(props);
-	// 	const { text } = ref<IbtnBase>(props.text);
-	// 	const clickBtn = () => {
-	// 		console.log(text);
-	// 		// console.log(context);
-	// 	};
-	// 	return { clickBtn, text };
-	// }
 });
 </script>
 

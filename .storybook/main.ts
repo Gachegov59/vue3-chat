@@ -12,6 +12,13 @@ const config: StorybookConfig = {
 	},
 	webpackFinal: async (config, { configType }) => {
 		// @ts-ignore
+		config.resolve.alias = {
+			// @ts-ignore
+			...config.resolve.alias,
+			'@': path.resolve(__dirname, '../src/')
+		};
+
+		// @ts-ignore
 		config.module.rules.push({
 			test: /\.scss$/,
 			use: ['style-loader', 'css-loader', 'sass-loader',

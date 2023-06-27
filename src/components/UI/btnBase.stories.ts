@@ -15,12 +15,6 @@ const btnBaseDefault: Meta<typeof btnBase> = {
 export default btnBaseDefault;
 type Story = StoryObj<typeof btnBase>;
 
-
-// export const actionsData = {
-// 	onPinTask: action('pin-task'),
-// 	onArchiveTask: action('archive-task'),
-// };
-
 export const Blue: Story = {
 	render: (args) => ({
 		components: { btnBase },
