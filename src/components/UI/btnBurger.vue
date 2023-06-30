@@ -1,21 +1,31 @@
 <template lang="pug">
-button.btn-burger(@click.stop='clickBtn' :class="[{_isActive:isButtonBurgerActive}, btnColor]")
+//p isButtonBurgerActive - {{isButtonBurgerActive}}
+//p btnState - {{btnState}}
+//hr
+button.btn-burger(@click.stop='clickBtn' :class="[{_isActive:btnState.value }, btnColor]")
 	.btn-burger__line-top
 	.btn-burger__line-middle
 	.btn-burger__line-bottom
+
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, Ref } from 'vue';
+import { defineComponent, ref, Ref, computed, watch } from 'vue';
 import { IBtnColors } from '@/interfaces/IBtn';
 
 interface IBtnBurgerProps {
 	btnColor: String;
+	parentState: Boolean;
 }
 
 export default defineComponent({
 	name: 'btnBurger',
 	props: {
+		parentState: {
+			required: false,
+			type: Boolean,
+			default: null
+		},
 		btnColor: {
 			required: false,
 			default: 'grey',
@@ -30,18 +40,42 @@ export default defineComponent({
 	},
 	setup(props: IBtnBurgerProps, { emit }) {
 		let isButtonBurgerActive: Ref<boolean> = ref(false);
+		let propParentState = ref(props.parentState);
+
+		watch(
+			() => props.parentState,
+			(newValue) => {
+				propParentState.value = newValue;
+			}
+		);
+
+		const btnState = computed(() => {
+			if (propParentState.value !== null) {
+				// console.log('return props.parentState------;', props.parentState);
+				// console.log('---------');
+				return propParentState;
+			}
+			// console.log('isButtonBurgerActive------');
+			// console.log('---------');
+			return isButtonBurgerActive;
+		});
+
 		const clickBtn = () => {
 			isButtonBurgerActive.value = !isButtonBurgerActive.value;
-			console.log(isButtonBurgerActive.value);
+			// console.log(isButtonBurgerActive.value);
+			// console.log('propParentState--', props.parentState);
+			// console.log('btnState--', btnState);
+
 			emit('clickBtn', isButtonBurgerActive.value);
 		};
-		return { clickBtn, isButtonBurgerActive };
+		return { clickBtn, isButtonBurgerActive, btnState };
 	}
 });
 </script>
 
 <style scoped lang="scss">
 .btn-burger {
+	display: inline;
 	height: 16px;
 	width: 20px;
 	border: none;
