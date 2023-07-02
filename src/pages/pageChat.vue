@@ -6,7 +6,7 @@
 
 <script>
 import ChatView from '@/components/chatView.vue';
-import MenuBase from '@/components/menuBase.vue';
+import MenuBase from '@/components/menu/menuBase.vue';
 
 export default {
 	name: 'chatPage',

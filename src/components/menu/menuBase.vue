@@ -5,21 +5,33 @@
 		.menu-base__btn-burger
 			BtnBurger(@clickBtn='clickBtnBurger' :parentState='isMenuOpen' )
 		//input.menu-base__input
-	.menu-base__modal(:class='{_open: isMenuOpen}')
+
+		btnBase(
+			:btnText="'Авторизоваться'"
+			:btnColor="'blue'"
+			@clickBtn="isShowAuthModal = true"
+		).chat-view__btn
+
+	.menu-base__sidebar(:class='{_open: isMenuOpen}')
 		.menu-base__btn-burger
 			BtnBurger(@clickBtn='clickBtnBurger' :parentState='isMenuOpen')._position-right
+	.menu-base__modal()
+		auth-modal(:isShowAuthModal='isShowAuthModal' @closeAuthModal='closeAuthModal')
 </template>
 
 <script lang="ts">
-import { defineComponent, onBeforeUnmount, onMounted, Ref, ref } from 'vue';
+import { defineComponent, Ref, ref } from 'vue';
 import BtnBurger from '@/components/UI/btnBurger.vue';
+import AuthModal from '@/components/menu/authModal.vue';
+import BtnBase from '@/components/UI/btnBase.vue';
 
 export default defineComponent({
 	name: 'menuBase',
-	components: { BtnBurger },
-	setup(prop, { emit }) {
+	components: { BtnBase, AuthModal, BtnBurger },
+	setup() {
 		let isMenuOpen: Ref<boolean> = ref(false);
-		const clickBtnBurger = (emitButtonBurger: boolean) => {
+
+		const clickBtnBurger = () => {
 			isMenuOpen.value = !isMenuOpen.value;
 			if (isMenuOpen.value) {
 				window.addEventListener('keydown', onKeyDown);
@@ -32,7 +44,19 @@ export default defineComponent({
 				window.removeEventListener('keydown', onKeyDown);
 			}
 		};
-		return { clickBtnBurger, isMenuOpen, onKeyDown };
+
+		let isShowAuthModal: Ref<boolean> = ref(false);
+		const closeAuthModal = () => {
+			isShowAuthModal.value = false;
+		};
+
+		return {
+			clickBtnBurger,
+			isMenuOpen,
+			onKeyDown,
+			isShowAuthModal,
+			closeAuthModal
+		};
 	}
 });
 </script>
@@ -40,7 +64,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .menu-base {
 	display: flex;
-	position: relative;
+	//position: relative;
 	max-width: 261px;
 	width: 100%;
 	height: 100%;
@@ -48,6 +72,7 @@ export default defineComponent({
 	&__btn-burger {
 		padding-right: 10px;
 		display: flex;
+		margin-bottom: 20px;
 	}
 	&__container {
 		padding: 20px;
@@ -56,7 +81,7 @@ export default defineComponent({
 	&__top {
 		display: flex;
 	}
-	&__modal {
+	&__sidebar {
 		background: $dark;
 		box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
 		width: 250px;

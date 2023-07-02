@@ -1,7 +1,4 @@
 <template lang="pug">
-//p isButtonBurgerActive - {{isButtonBurgerActive}}
-//p btnState - {{btnState}}
-//hr
 button.btn-burger(@click.stop='clickBtn' :class="[{_isActive:btnState.value }, btnColor]")
 	.btn-burger__line-top
 	.btn-burger__line-middle
@@ -36,7 +33,7 @@ export default defineComponent({
 		}
 	},
 	emits: {
-		clickBtn: (value: boolean) => true
+		clickBtn: () => true
 	},
 	setup(props: IBtnBurgerProps, { emit }) {
 		let isButtonBurgerActive: Ref<boolean> = ref(false);
@@ -51,22 +48,14 @@ export default defineComponent({
 
 		const btnState = computed(() => {
 			if (propParentState.value !== null) {
-				// console.log('return props.parentState------;', props.parentState);
-				// console.log('---------');
 				return propParentState;
 			}
-			// console.log('isButtonBurgerActive------');
-			// console.log('---------');
 			return isButtonBurgerActive;
 		});
 
 		const clickBtn = () => {
 			isButtonBurgerActive.value = !isButtonBurgerActive.value;
-			// console.log(isButtonBurgerActive.value);
-			// console.log('propParentState--', props.parentState);
-			// console.log('btnState--', btnState);
-
-			emit('clickBtn', isButtonBurgerActive.value);
+			emit('clickBtn');
 		};
 		return { clickBtn, isButtonBurgerActive, btnState };
 	}
@@ -86,8 +75,8 @@ export default defineComponent({
 	background: none;
 	transition: $transition-default;
 
-	&:hover {
-		opacity: 0.8;
+	&:hover * {
+		background: $light-blue;
 	}
 
 	&__line-top,
