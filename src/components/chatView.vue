@@ -2,9 +2,10 @@
 .chat-view
 	.chat-view__top
 	.chat-view__content
-	.chat-view__input-pannel
-		.chat-view__input
-			input(placeholder="Ввдите сообщение..")
+	.chat-view__textarea-pannel
+		.chat-view__textarea
+			textarea(placeholder="Ввдите сообщение..")
+			.chat-view__help shift + enter
 		btnBase(
 			:btnText="'Отправить'"
 			:btnColor="'blue'"
@@ -45,29 +46,34 @@ export default defineComponent({
 		flex-grow: 1;
 	}
 
-	&__input-pannel {
+	&__textarea-pannel {
 		display: flex;
 		align-items: center;
-		padding: 10px;
+		padding: 0 10px;
 		height: 54px;
 		background: $dark;
-	}
 
-	&__input {
-		flex-grow: 1;
-		input {
-			background: transparent;
+		textarea {
+			background: none;
 			border: none;
-			&::placeholder {
-				font-size: 14px;
-				color: $blue-grey;
-			}
-			&:focus-visible {
+			resize: none;
+			overflow: hidden;
+			width: 100%;
+			height: 20px;
+			&:focus {
 				outline: none;
 			}
 		}
 	}
 
+	&__textarea {
+		flex-grow: 1;
+		align-self: flex-end;
+	}
+	&__help {
+		font-size: 12px;
+		color: $blue-grey;
+	}
 	&__btn {
 		height: 28px;
 	}

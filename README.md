@@ -5,7 +5,6 @@
 
 <p style='text-align: center'>
    <img src="https://img.shields.io/badge/:ServerVersion" alt="Server Version">
-   <img src="" alt="Game Version">
 </p>
 
 <h2> About project</h2>
