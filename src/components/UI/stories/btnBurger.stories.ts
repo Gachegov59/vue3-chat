@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { action } from '@storybook/addon-actions';
-import btnBurger from './btnBurger.vue';
+import btnBurger from '../btnBurger.vue';
 
 const btnBurgerDefault: Meta<typeof btnBurger> = {
 	title: 'BUTTONS/btnBurger',
