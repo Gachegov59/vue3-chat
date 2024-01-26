@@ -14,8 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, PropType } from 'vue';
-import { IAvatarTypes } from '@/interfaces/IAvatar';
+import { defineComponent, ref, computed } from 'vue';
 import loaderSpinner from '@/components/UI/loaderSpinner.vue';
 interface IAvatarBaseSpinnerProps {
 	size: Number;
@@ -36,15 +35,6 @@ export default defineComponent({
 		name: {
 			required: true,
 			type: String
-		},
-		type: {
-			required: true,
-			type: String as PropType<IAvatarTypes>,
-			validator(value: string) {
-				// return Object.values(IAvatarTypes).includes(value as IAvatarTypes);
-				// todo: add validator
-				return true;
-			}
 		}
 	},
 

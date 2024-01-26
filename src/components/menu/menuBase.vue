@@ -6,9 +6,16 @@
 			BtnBurger(@clickBtn='clickBtnBurger' :parentState='isMenuOpen' )
 
 		avatarUserBase(
+			:iserId="1234"
 			:image="'avatar.jpg'"
 			:name="'user'"
-			:type="'person'"
+			:size="50"
+		).chat-view__avatar
+
+		avatarGroupBase(
+			:groupId="12345"
+			:images="['avatar.jpg', 'avatar-default_1.png']"
+			:name="'group1'"
 			:size="50"
 		).chat-view__avatar
 
@@ -25,10 +32,11 @@ import { defineComponent, Ref, ref } from 'vue';
 import BtnBurger from '@/components/UI/btnBurger.vue';
 import AuthModal from '@/components/menu/authModal.vue';
 import AvatarUserBase from '@/components/UI/avatar/avatarUserBase.vue';
+import AvatarGroupBase from '@/components/UI/avatar/avatarGroupBase.vue';
 
 export default defineComponent({
 	name: 'menuBase',
-	components: { AvatarUserBase, AuthModal, BtnBurger },
+	components: { AvatarGroupBase, AvatarUserBase, AuthModal, BtnBurger },
 	setup() {
 		let isMenuOpen: Ref<boolean> = ref(false);
 

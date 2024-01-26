@@ -2,4 +2,4 @@
 // 	person = 'person',
 // 	group = 'group'
 // }
-export type IAvatarTypes = 'person' | 'group';
+// export type IAvatarTypes = 'person' | 'group';

@@ -8,7 +8,6 @@ button(
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { IBtnColors } from '@/interfaces/IBtn';
-import { IAvatarTypes } from '@/interfaces/IAvatar';
 interface IBtnProps {
 	btnText: String;
 	btnColor: String;
