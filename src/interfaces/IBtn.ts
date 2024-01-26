@@ -1,6 +1,7 @@
-export enum IBtnColors {
-	// eslint-disable-next-line no-unused-vars
-	Blue = 'blue',
-	BlueDark = 'blueDark',
-	Grey = 'grey'
-}
+// export enum IBtnColors {
+// 	Blue = 'blue',
+// 	BlueDark = 'blueDark',
+// 	Grey = 'grey'
+// }
+
+export type IBtnColors = 'blue' | 'blueDark' | 'grey';

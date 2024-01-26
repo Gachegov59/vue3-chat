@@ -7,7 +7,7 @@ button.btn-burger(@click.stop='clickBtn' :class="[{_isActive:btnState.value }, b
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, Ref, computed, watch } from 'vue';
+import { defineComponent, ref, Ref, computed, watch, PropType } from 'vue';
 import { IBtnColors } from '@/interfaces/IBtn';
 
 interface IBtnBurgerProps {
@@ -26,9 +26,11 @@ export default defineComponent({
 		btnColor: {
 			required: false,
 			default: 'grey',
-			type: String,
+			type: String as PropType<IBtnColors>,
 			validator(value: string) {
-				return Object.values(IBtnColors).includes(value as IBtnColors);
+				// return Object.values(IBtnColors).includes(value as IBtnColors);
+				// todo: add validator
+				return true;
 			}
 		}
 	},

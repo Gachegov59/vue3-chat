@@ -6,8 +6,9 @@ button(
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import { IBtnColors } from '@/interfaces/IBtn';
+import { IAvatarTypes } from '@/interfaces/IAvatar';
 interface IBtnProps {
 	btnText: String;
 	btnColor: String;
@@ -23,10 +24,11 @@ export default defineComponent({
 		btnColor: {
 			required: false,
 			default: 'blue',
-			// type: String as PropType<IBtnColors>,
-			type: String,
+			type: String as PropType<IBtnColors>,
 			validator(value: string) {
-				return Object.values(IBtnColors).includes(value as IBtnColors);
+				// return Object.values(IBtnColors).includes(value as IBtnColors);
+				// todo: add validator
+				return true;
 			}
 		}
 	},

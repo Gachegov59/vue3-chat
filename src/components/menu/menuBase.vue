@@ -4,13 +4,14 @@
 		.menu-base__top
 		.menu-base__btn-burger
 			BtnBurger(@clickBtn='clickBtnBurger' :parentState='isMenuOpen' )
-		//input.menu-base__input
 
-		btnBase(
-			:btnText="'Авторизоваться'"
-			:btnColor="'blue'"
-			@clickBtn="isShowAuthModal = true"
-		).chat-view__btn
+		avatarUserBase(
+			:image="'avatar.jpg'"
+			:name="'user'"
+			:type="'person'"
+			:size="50"
+		).chat-view__avatar
+
 
 	.menu-base__sidebar(:class='{_open: isMenuOpen}')
 		.menu-base__btn-burger
@@ -23,11 +24,11 @@
 import { defineComponent, Ref, ref } from 'vue';
 import BtnBurger from '@/components/UI/btnBurger.vue';
 import AuthModal from '@/components/menu/authModal.vue';
-import BtnBase from '@/components/UI/btnBase.vue';
+import AvatarUserBase from '@/components/UI/avatar/avatarUserBase.vue';
 
 export default defineComponent({
 	name: 'menuBase',
-	components: { BtnBase, AuthModal, BtnBurger },
+	components: { AvatarUserBase, AuthModal, BtnBurger },
 	setup() {
 		let isMenuOpen: Ref<boolean> = ref(false);
 
