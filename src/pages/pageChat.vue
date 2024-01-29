@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ChatView from '@/components/chatView.vue';
+import ChatView from '@/components/chat/chatView.vue';
 import MenuBase from '@/components/menu/menuBase.vue';
 
 export default {

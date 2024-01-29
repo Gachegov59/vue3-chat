@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import loaderSpinner from '../loaderSpinner.vue';
+import loaderSpinner from '../spinner/loaderSpinner.vue';
 
 const loaderSpinnerDefault: Meta<typeof loaderSpinner> = {
 	title: 'loaders/loaderSpinner',

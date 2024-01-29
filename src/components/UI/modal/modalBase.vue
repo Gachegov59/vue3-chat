@@ -3,7 +3,7 @@
 	.modal-overlay(@click.self='closeModal')
 	.modal
 			.modal__close(@click='closeModal')
-				include ../../assets/svg/close-button.svg
+				include ../../../assets/svg/close-button.svg
 			.modal__container
 				slot(name="modal-content")
 			.modal__button

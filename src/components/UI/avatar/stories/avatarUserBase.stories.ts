@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import avatarUserBase from '@/components/UI/avatar/avatarUserBase.vue';
+import avatarUserBase from '@/components/UI/avatar/avatarChatBase.vue';
 
 const avatarUserBaseDefault: Meta<typeof avatarUserBase> = {
 	title: 'AVATAR/avatar',

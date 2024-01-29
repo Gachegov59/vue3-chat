@@ -1,8 +1,8 @@
 <template lang="pug">
 .group
 	template(v-for="(avatar, number) in images")
-		avatarUserBase(
-			:iserId="1234"
+		avatarChatBase(
+			:userId="1234"
 			:image="avatar"
 			:name="'user'"
 			:size="50"
@@ -13,14 +13,14 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, PropType } from 'vue';
-import loaderSpinner from '@/components/UI/loaderSpinner.vue';
-import AvatarUserBase from '@/components/UI/avatar/avatarUserBase.vue';
+import loaderSpinner from '@/components/UI/spinner/loaderSpinner.vue';
+import avatarChatBase from '@/components/UI/avatar/avatarChatBase.vue';
 interface IAvatarBaseSpinnerProps {
 	size: Number;
 }
 export default defineComponent({
 	name: 'avatar-group-base',
-	components: { AvatarUserBase, loaderSpinner },
+	components: { avatarChatBase, loaderSpinner },
 	props: {
 		images: {
 			required: true,

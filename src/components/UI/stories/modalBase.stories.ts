@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { action } from '@storybook/addon-actions';
-import modalBase from '../modalBase.vue';
+import modalBase from '../modal/modalBase.vue';
 
 const modalBaseDefault: Meta<typeof modalBase> = {
 	title: 'modals/modalBase',

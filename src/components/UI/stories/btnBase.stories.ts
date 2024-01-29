@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { action } from '@storybook/addon-actions';
-import btnBase from '../btnBase.vue';
+import btnBase from '@/components/UI/button/btnBase.vue';
 
 const btnBaseDefault: Meta<typeof btnBase> = {
 	title: 'BUTTONS/btnBase',

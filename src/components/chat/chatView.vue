@@ -2,6 +2,8 @@
 .chat-view
 	.chat-view__top
 	.chat-view__content
+		//LoaderSpinner
+		ChatViewPagination(:currentChat='currentChat')
 	.chat-view__textarea-pannel
 		.chat-view__textarea
 			textarea(placeholder="Ввдите сообщение..")
@@ -15,15 +17,39 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BtnBase from './UI/btnBase.vue';
-// import { IBtnBase } from "../interfaces/IUser.ts";
+import BtnBase from '@/components/UI/button/btnBase.vue';
+import ChatViewPagination from '@/components/chat/chatViewPagination.vue';
+import LoaderSpinner from '@/components/UI/spinner/loaderSpinner.vue';
+import { ICurrentChat } from '@/components/chat/interfaces/IChat';
 export default defineComponent({
 	name: 'chatView',
-	components: { BtnBase },
-	methods: {
-		clickChatBtn() {
+	components: { LoaderSpinner, ChatViewPagination, BtnBase },
+	setup() {
+		let clickChatBtn = () => {
 			console.log('clickChatBtn');
-		}
+		};
+
+		// CURRENT CHAT DATE
+		let currentChat: ICurrentChat = {
+			chatId: '254424131',
+			type: 'personal',
+			name: 'Петя',
+			owner: {
+				ownerId: '123123edasd34',
+				name: 'Петя'
+			},
+			members: [
+				{
+					id: '123123edasd34',
+					name: 'Петя',
+					surname: 'Петров',
+					role: 'owner',
+					status: true
+				}
+			],
+			isRead: true
+		};
+		return { clickChatBtn, currentChat };
 	}
 });
 </script>

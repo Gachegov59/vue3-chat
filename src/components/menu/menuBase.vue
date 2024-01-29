@@ -17,16 +17,16 @@
 
 <script lang="ts">
 import { defineComponent, Ref, ref } from 'vue';
-import BtnBurger from '@/components/UI/btnBurger.vue';
+import BtnBurger from '@/components/UI/button/btnBurger.vue';
 import AuthModal from '@/components/menu/authModal.vue';
-import AvatarUserBase from '@/components/UI/avatar/avatarUserBase.vue';
+import avatarChatBase from '@/components/UI/avatar/avatarChatBase.vue';
 import AvatarGroupBase from '@/components/UI/avatar/avatarGroupBase.vue';
 import MenuChat from '@/components/menu/menuChat.vue';
-import { IMenuChat } from '@/components/menu/interfaces/menu';
+import { IMenuChat } from '@/components/menu/interfaces/IMenu';
 
 export default defineComponent({
 	name: 'menuBase',
-	components: { MenuChat, AvatarGroupBase, AvatarUserBase, AuthModal, BtnBurger },
+	components: { MenuChat, AvatarGroupBase, avatarChatBase, AuthModal, BtnBurger },
 	setup() {
 		let isMenuOpen: Ref<boolean> = ref(false);
 
@@ -68,6 +68,17 @@ export default defineComponent({
 				name: 'Саша',
 				type: 'user',
 				counter: 0,
+				lastMessage: {
+					text: 'Вы где?',
+					date: 'Sat Jan 27 2024 15:36:16 GMT+0200'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_3.png',
+				name: 'Kek',
+				type: 'group',
+				counter: 28,
 				lastMessage: {
 					text: 'Вы где?',
 					date: 'Sat Jan 27 2024 15:36:16 GMT+0200'

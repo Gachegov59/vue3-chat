@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
-import loaderSpinner from '@/components/UI/loaderSpinner.vue';
+import loaderSpinner from '@/components/UI/spinner/loaderSpinner.vue';
 interface IAvatarBaseSpinnerProps {
 	size: Number;
 }

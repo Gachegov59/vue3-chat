@@ -1,7 +1,7 @@
 <template lang="pug">
 .menu-chat(v-for="chat in chats" )
 	.menu-chat__avatar
-		avatarUserBase(
+		avatarChatBase(
 			:userId="1234"
 			:image="chat.image"
 			:name="'user'"
@@ -19,13 +19,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue';
-import AvatarUserBase from '@/components/UI/avatar/avatarUserBase.vue';
+import avatarChatBase from '@/components/UI/avatar/avatarChatBase.vue';
 import AvatarGroupBase from '@/components/UI/avatar/avatarGroupBase.vue';
-import { IMenuChat } from '@/components/menu/interfaces/menu';
+import { IMenuChat } from '@/components/menu/interfaces/IMenu';
 
 export default defineComponent({
 	name: 'menu-chat',
-	components: { AvatarGroupBase, AvatarUserBase },
+	components: { AvatarGroupBase, avatarChatBase },
 	props: {
 		chats: {
 			required: true,
@@ -71,7 +71,7 @@ export default defineComponent({
 		font-size: 10px;
 	}
 	&__counter {
-		font-size: 12px;
+		font-size: 11px;
 		line-height: 18px;
 		position: absolute;
 		bottom: 0;

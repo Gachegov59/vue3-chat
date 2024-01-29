@@ -1,10 +1,11 @@
 export interface IUser {
 	id: string;
 	name: string;
-	middleName?: string;
 	surname: string;
-	chats: [];
 	status: boolean;
+	middleName?: string;
+	chats?: [];
+	role?: string;
 	photoId?: string;
-	account: string;
+	account?: string;
 }

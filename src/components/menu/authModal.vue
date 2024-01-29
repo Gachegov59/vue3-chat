@@ -13,7 +13,7 @@ modal-base(:isShowModal='isShowAuthModal' @closeModal='closeAuthModal')
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ModalBase from '@/components/UI/modalBase.vue';
+import ModalBase from '@/components/UI/modal/modalBase.vue';
 
 export default defineComponent({
 	name: 'auth-modal',
