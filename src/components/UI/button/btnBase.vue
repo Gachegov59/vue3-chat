@@ -46,7 +46,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 button {
-	color: $white;
+	color: var(--white);
 	border: none;
 	outline: none;
 	border-radius: 5px;
@@ -60,11 +60,11 @@ button {
 }
 
 .blue {
-	background: $cool-blue;
+	background: var(--cool-blue);
 }
 
 .blueDark {
-	background: $dark-five;
-	color: $light-blue;
+	background: var(--dark-five);
+	color: var(--light-blue);
 }
 </style>

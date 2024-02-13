@@ -39,7 +39,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .modal-wrap {
-	//transition: $transition-default;
+	//transition: var(--transition-default);
 }
 .modal-overlay {
 	position: absolute;
@@ -61,7 +61,7 @@ export default defineComponent({
 	margin: auto;
 	min-width: 300px;
 	min-height: 250px;
-	background: $dark;
+	background: var(--dark);
 	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15), 0 5px 15px -7px rgba(0, 0, 0, 0.5);
 	&__close {
 		width: 20px;
@@ -69,11 +69,11 @@ export default defineComponent({
 		margin-left: auto;
 		cursor: pointer;
 		svg path {
-			fill: $battleship-grey-two;
-			transition: $transition-default;
+			fill: var(--battleship-grey-two);
+			transition: var(--transition-default);
 		}
 		&:hover svg path {
-			fill: $light-blue;
+			fill: var(--light-blue);
 		}
 	}
 }

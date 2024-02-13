@@ -75,10 +75,10 @@ export default defineComponent({
 	font: inherit;
 	cursor: pointer;
 	background: none;
-	transition: $transition-default;
+	transition: var(--transition-default);
 
 	&:hover * {
-		background: $light-blue;
+		background: var(--light-blue);
 	}
 
 	&__line-top,
@@ -87,8 +87,8 @@ export default defineComponent({
 		display: block;
 		width: 20px;
 		height: 2px;
-		background: $battleship-grey-two;
-		transition: $transition-default;
+		background: var(--battleship-grey-two);
+		transition: var(--transition-default);
 		position: absolute;
 	}
 
@@ -114,7 +114,7 @@ export default defineComponent({
 		}
 
 		.btn-burger__line-middle {
-			transition: $transition-default;
+			transition: var(--transition-default);
 			transform: rotate(-45deg);
 			opacity: 0;
 		}

@@ -23,17 +23,19 @@ export default defineComponent({
 <style scoped lang="scss">
 .message-item {
 	margin-bottom: 10px;
-	background: $cool-blue;
-	padding: 3px 10px;
+	background: var(--dark-four);
+	padding: 10px;
 	border-radius: 5px;
+	width: fit-content;
+	//display: table;
+	//max-width: 100%;
 	&__container {
 		display: flex;
 		justify-content: space-between;
 	}
 	&__date {
 		font-size: 12px;
-		//color: (--color-primary);
-		color: $dark-five;
+		color: var(--bluish-grey);
 		align-self: flex-end;
 		padding-left: 10px;
 	}

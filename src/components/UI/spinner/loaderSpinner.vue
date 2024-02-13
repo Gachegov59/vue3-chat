@@ -29,7 +29,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .loader {
-	border: 5px solid $white;
+	border: 5px solid var(--white);
 	border-bottom-color: transparent;
 	border-radius: 50%;
 	display: inline-block;

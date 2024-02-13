@@ -29,6 +29,7 @@ export interface IChatMessage {
 	messageId: string;
 	userId: string;
 	userAvatar: string;
+	isMine: boolean;
 	date: string;
 	messages: IChatMessageItem[];
 }

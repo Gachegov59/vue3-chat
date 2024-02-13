@@ -104,7 +104,7 @@ export default defineComponent({
 	max-width: 261px;
 	width: 100%;
 	height: 100%;
-	background: $dark;
+	background: var(--dark);
 	&__btn-burger {
 		padding-right: 10px;
 		display: flex;
@@ -118,7 +118,7 @@ export default defineComponent({
 		display: flex;
 	}
 	&__sidebar {
-		background: $dark;
+		background: var(--dark);
 		box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
 		width: 250px;
 		height: 100%;
@@ -127,7 +127,7 @@ export default defineComponent({
 		left: -250px;
 		//top: 80px;
 		bottom: 0;
-		transition: $transition-default;
+		transition: var(--transition-default);
 		._position-right {
 			margin-left: auto;
 		}

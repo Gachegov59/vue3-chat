@@ -61,11 +61,12 @@ export default defineComponent({
 		justify-content: space-between;
 	}
 	&__text {
-		color: $blue-grey;
+		color: var(--blue-grey);
 		white-space: nowrap;
 		max-width: 150px;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		padding-right: 30px;
 	}
 	&__date {
 		font-size: 10px;
@@ -79,7 +80,7 @@ export default defineComponent({
 		text-align: center;
 		width: 18px;
 		height: 18px;
-		background: $cool-blue;
+		background: var(--cool-blue);
 		border-radius: 100%;
 	}
 }

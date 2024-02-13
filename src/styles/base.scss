@@ -2,7 +2,7 @@
 ::after,
 ::before {
 	box-sizing: border-box;
-	color: $white;
+	color: var(--white);
 }
 
 
@@ -10,19 +10,28 @@ html {
 	height: 100% !important;
 	font-family: 'Roboto', sans-serif;
 }
-.div {
-	::after {
-	top: 1px;
-		position: relative;
-	}
-	::before {
 
-	}
-}
 #app {
 	height: 100%;
 }
 body {
 	height: 100%;
-	background: $dark;
+	background: var(--dark);;
+}
+
+.scroll {
+	&::-webkit-scrollbar {
+		width: 2px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--light-blue);
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	overflow-y: auto;
+	overflow-x: hidden;
+
 }

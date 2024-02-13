@@ -70,7 +70,7 @@ export default defineComponent({
 		border-radius: 100%;
 	}
 	&__block {
-		border: 1px solid rgba($white, 0.5);
+		border: 1px solid rgba(var(--white), 0.5);
 		border-radius: 100%;
 		//&._default {
 		//	border: 1px solid rgba($white, 0.5);

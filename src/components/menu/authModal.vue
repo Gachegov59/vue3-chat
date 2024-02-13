@@ -44,7 +44,7 @@ export default defineComponent({
 		width: 140px;
 		height: 140px;
 		border-radius: 100%;
-		background: $dark-three;
+		background: var(--dark-three);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -65,7 +65,7 @@ export default defineComponent({
 		font-size: 16px;
 		font-weight: 300;
 		text-align: center;
-		color: $blue-grey;
+		color: var(--blue-grey);
 		max-width: 300px;
 		margin: 0 auto 49px;
 	}
