@@ -4,8 +4,8 @@
 		.menu-base__top
 		.menu-base__btn-burger
 			BtnBurger(@clickBtn='clickBtnBurger' :parentState='isMenuOpen' )
-
-		menuChat(:chats="menuChats")
+		.menu-base__chats.scroll
+			menuChat(:chats="menuChats")
 
 
 	.menu-base__sidebar(:class='{_open: isMenuOpen}')
@@ -54,12 +54,100 @@ export default defineComponent({
 			{
 				id: '123123edasd',
 				image: 'avatar-default_1.png',
+				name: 'Аня',
+				type: 'user',
+				counter: 10,
+				lastMessage: {
+					text: 'Как дела ?',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
+				name: 'Валимир Путин',
+				type: 'user',
+				counter: 10,
+				lastMessage: {
+					text: 'эхе эхе',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
+				name: 'Пригожин',
+				type: 'user',
+				counter: 10,
+				lastMessage: {
+					text: 'Где патроны ?',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
+				name: 'Вася',
+				type: 'user',
+				counter: 10,
+				lastMessage: {
+					text: 'Где дяньги?',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
+				name: 'Костя',
+				type: 'user',
+				counter: 10,
+				lastMessage: {
+					text: 'Как дела ?',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
+				name: 'Миша',
+				type: 'user',
+				counter: 10,
+				lastMessage: {
+					text: 'Ты че пес',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
+				name: 'Степа',
+				type: 'user',
+				counter: 1,
+				lastMessage: {
+					text: 'Привет!',
+					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_1.png',
 				name: 'Петя',
 				type: 'user',
 				counter: 1,
 				lastMessage: {
 					text: 'Привет как дела ?',
 					date: '2024.01.01'
+				}
+			},
+			{
+				id: '123123edasd',
+				image: 'avatar-default_3.png',
+				name: 'Kekos',
+				type: 'group',
+				counter: 28,
+				lastMessage: {
+					text: 'Идем пить?',
+					date: 'Sat Jan 27 2024 15:36:16 GMT+0200'
 				}
 			},
 			{
@@ -103,19 +191,27 @@ export default defineComponent({
 	//position: relative;
 	max-width: 261px;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background: var(--dark);
+	@include mobile {
+		//max-width: 100px;
+		display: none;
+	}
 	&__btn-burger {
 		padding-right: 10px;
 		display: flex;
 		margin-bottom: 20px;
 	}
 	&__container {
-		padding: 20px;
+		padding: 5px;
 		width: 100%;
 	}
 	&__top {
 		display: flex;
+	}
+	&__chats {
+		max-height: 80%;
+		padding: 0 10px;
 	}
 	&__sidebar {
 		background: var(--dark);
