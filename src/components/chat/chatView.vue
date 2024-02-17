@@ -2,7 +2,8 @@
 .chat-view
 	.chat-view__top
 	.chat-view__content.scroll
-		//LoaderSpinner
+		.chat-view__loader(v-if='!loaded' )
+			LoaderSpinner(:size='100' )
 		ChatViewPagination(:currentChat='currentChat')
 	.chat-view__textarea-pannel
 		.chat-view__textarea
@@ -29,10 +30,10 @@ export default defineComponent({
 		let clickChatBtn = () => {
 			console.log('clickChatBtn');
 		};
-
+		let loaded = true;
 		// CURRENT CHAT DATE
 		let currentChat: ICurrentChat = currentChatAPI;
-		return { clickChatBtn, currentChat };
+		return { clickChatBtn, currentChat, loaded };
 	}
 });
 </script>
@@ -41,6 +42,7 @@ export default defineComponent({
 .chat-view {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 	height: 100%;
 	width: 100%;
 	background: var(--dark-two);
@@ -87,6 +89,19 @@ export default defineComponent({
 	}
 	&__btn {
 		height: 28px;
+	}
+	&__loader {
+		background: var(--blue-dark);
+		opacity: 0.8;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 </style>

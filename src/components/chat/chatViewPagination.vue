@@ -1,5 +1,5 @@
 <template lang="pug">
-.chat-view-pagination
+.chat-view-pagination.scroll
 	ChatMessage(v-for='message in chatMessages'  :chatMessage="message")
 
 </template>

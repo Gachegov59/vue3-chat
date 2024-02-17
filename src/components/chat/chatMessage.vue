@@ -33,6 +33,7 @@ export default defineComponent({
 .chat-message {
 	padding-bottom: 20px;
 	max-width: 50rem;
+	border-bottomw: 1px solid red;
 	&._mine {
 		align-items: end;
 	}
