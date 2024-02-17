@@ -1,5 +1,5 @@
 <template lang="pug">
-.message-item
+.message-item(:class='{_mine: isMine}')
 	.message-item__container
 		.message-item__text {{chatMessage.content}}
 		.message-item__date {{$dayjs(chatMessage.date).format('HH.MM')}}
@@ -15,6 +15,11 @@ export default defineComponent({
 		chatMessage: {
 			type: Object as PropType<IChatMessageItem>,
 			required: true
+		},
+		isMine: {
+			type: Boolean,
+			required: true,
+			default: false
 		}
 	}
 });
@@ -27,8 +32,10 @@ export default defineComponent({
 	padding: 10px;
 	border-radius: 5px;
 	width: fit-content;
-	//display: table;
-	//max-width: 100%;
+	max-width: 90%;
+	&._mine {
+		background: var(--light-navy-blue);
+	}
 	&__container {
 		display: flex;
 		justify-content: space-between;

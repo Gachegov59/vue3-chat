@@ -54,8 +54,8 @@ export default defineComponent({
 	}
 
 	&__content {
-		flex-grow: 1;
-		overflow-y: scroll;
+		//flex-grow: 1;
+		//overflow-y: scroll;
 		height: calc(100vh - 67px - 54px);
 	}
 

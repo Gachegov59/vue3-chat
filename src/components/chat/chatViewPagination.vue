@@ -1,5 +1,5 @@
 <template lang="pug">
-.chat-view-pagination.scroll
+.chat-view-pagination
 	ChatMessage(v-for='message in chatMessages'  :chatMessage="message")
 
 </template>
@@ -26,4 +26,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.chat-view-pagination {
+	display: flex;
+	flex-direction: column;
+}
+</style>

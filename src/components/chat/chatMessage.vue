@@ -8,7 +8,7 @@
 			).chat-message__avatar
 		.chat-message__items
 			template(v-for='messages in chatMessage.messages' )
-				MessageItem(:chatMessage="messages")
+				MessageItem(:chatMessage="messages" :isMine="chatMessage.isMine")
 </template>
 
 <script lang="ts">
@@ -33,18 +33,30 @@ export default defineComponent({
 .chat-message {
 	padding-bottom: 20px;
 	max-width: 50rem;
-	border-bottomw: 1px solid red;
 	&._mine {
-		align-items: end;
+		margin-left: auto;
 	}
 	&__container {
 		display: flex;
 		padding: 0 5px;
+		._mine & {
+			flex-direction: row-reverse;
+		}
+	}
+	&__items {
+		display: flex;
+		flex-direction: column;
+		._mine & {
+			align-items: end;
+		}
 	}
 	&__avatar {
 		margin-right: 10px;
 		position: sticky;
 		top: 10px;
+		._mine & {
+			margin-left: 10px;
+		}
 	}
 }
 </style>
